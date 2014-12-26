@@ -1,3 +1,9 @@
+# Map files and (generated tiles)
+
+ToDo: Figure out who owns the tiles... SVGs are avaiable at
+https://chaos.expert/ and a rendered version is uploaded to the wiki
+at https://events.ccc.de/congress/2014/wiki/ with no license information.
+
 # Sources written for c3map
 
 The MIT License (MIT)
@@ -21,12 +27,6 @@ The MIT License (MIT)
   LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
   OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
   THE SOFTWARE.
-
-# Map files and (generated tiles)
-
-ToDo: Figure out who owns the tiles... SVGs are avaiable at
-https://chaos.expert/ and a rendered version is uploaded to the wiki
-at https://events.ccc.de/congress/2014/wiki/ with no license information.
 
 # Leaflet.js
 
