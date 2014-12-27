@@ -27,7 +27,7 @@
         var location_link = window.location.href.replace(window.location.hash,"") + "#/loc/" + e.latlng.lat + '/' + e.latlng.lng;
 
         app.popup.setLatLng(e.latlng)
-          .setContent('<a href="' + location_link + '">Link to this location</a><br><div style="overflow:scroll">' + location_link + '</div>')
+          .setContent('<a href="' + location_link + '">Link to this location</a><br><div style="overflow:auto">' + location_link + '</div>')
           .openOn(app.map);
       }
 
