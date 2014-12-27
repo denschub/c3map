@@ -10,9 +10,6 @@
         document.querySelector("#installContainer a").addEventListener("click", function(e) {
           e.preventDefault();
           var installRequest = window.navigator.mozApps.install("http://c3map.schub.io/manifest.webapp");
-          installRequest.onsuccess = function () {
-            alert("Installation successful!");
-          };
           installRequest.onerror = function () {
             alert("Install failed, error: " + this.error.name);
           };
