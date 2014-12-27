@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html manifest="bt.appcache">
+<head>
+  <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      if(window.navigator.mozApps) {
+        document.querySelector("#installContainer a").addEventListener("click", function(e) {
+          e.preventDefault();
+          var installRequest = window.navigator.mozApps.install("http://c3map.schub.io/manifest.webapp");
+          installRequest.onsuccess = function () {
+            alert("Installation successful!");
+          };
+          installRequest.onerror = function () {
+            alert("Install failed, error: " + this.error.name);
+          };
+        });
+      }
+    });
+  </script>
+  <style>
+    #installContainer {
+      font-size: 2em;
+      margin: 20px;
+      text-align: center;
+    }
+  </style>
+
+  <title>Install Usermap - 31st Chaos Communication Congress</title>
+</head>
+<body>
+  <div id="installContainer">
+    <a href="">Install as WebApp</a>
+  </div>
+</body>
+</html>

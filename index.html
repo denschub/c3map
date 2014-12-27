@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de" manifest="c3map.appcache">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,7 +27,7 @@
         var location_link = window.location.href.replace(window.location.hash,"") + "#/loc/" + e.latlng.lat + '/' + e.latlng.lng;
 
         app.popup.setLatLng(e.latlng)
-          .setContent('<a href="' + location_link + '">Link to this location</a>')
+          .setContent('<a href="' + location_link + '">Link to this location</a><br><div style="overflow:scroll">' + location_link + '</div>')
           .openOn(app.map);
       }
 

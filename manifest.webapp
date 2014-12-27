@@ -1,0 +1,15 @@
+{
+  "name": "31c3 Usermap",
+  "description": "Uh, oh, it's a map!",
+  "launch_path": "/index.html",
+  "icons": {
+    "512": "/img/icon-512.png",
+    "128": "/img/icon-128.png"
+  },
+  "developer": {
+    "name": "Dennis Schubert",
+    "url": "http://schub.io"
+  },
+  "appcache_path": "/c3map.appcache",
+  "default_locale": "en"
+}
