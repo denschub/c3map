@@ -35,7 +35,7 @@
         if(window.location.hash.indexOf("loc") !== -1) {
           var hash = window.location.hash.split('/');
           L.marker([hash[2], hash[3]]).addTo(app.map)
-            .bindPopup("Shared Location").openPopup();
+            .bindPopup('Shared Location<br><div style="overflow:auto">'+document.location.href+'</div>').openPopup();
           app.map.setView([hash[2], hash[3]], 3);
         }
       }
