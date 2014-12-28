@@ -4,18 +4,37 @@ var app = {
 };
 
 function onMapClick(e) {
-  var location_link = window.location.href.replace(window.location.hash,"") + "#/loc/" + e.latlng.lat + '/' + e.latlng.lng;
+  var location_link = window.location.href.replace(window.location.hash,"") + "#/loc/" + e.latlng.lat + "/" + e.latlng.lng;
 
-  app.popup.setLatLng(e.latlng)
-  .setContent('<a href="' + location_link + '">Link to this location</a><br><div style="overflow:auto">' + location_link + '</div>')
-  .openOn(app.map);
+  if(typeof(MozActivity) !== "undefined") {
+    app.popup
+      .setLatLng(e.latlng)
+      .setContent('<a href="" id="sharelink" data-link="' + location_link + '">Share this location</a>')
+      .openOn(app.map);
+
+    document.getElementById("sharelink").addEventListener("click", function(e) {
+      e.preventDefault();
+      new MozActivity({
+        name: "share",
+        data: {
+          type: "url",
+          url: location_link
+        }
+      });
+    });
+  } else {
+    app.popup
+      .setLatLng(e.latlng)
+      .setContent('Link to this location:<br> <div style="overflow:auto"><a href="' + location_link + '">' + location_link + "</a></div>")
+      .openOn(app.map);
+  }
 }
 
 function addHashLocationMarker() {
   if(window.location.hash.indexOf("loc") !== -1) {
-    var hash = window.location.hash.split('/');
+    var hash = window.location.hash.split("/");
     L.marker([hash[2], hash[3]]).addTo(app.map)
-    .bindPopup('Shared Location<br><div style="overflow:auto">'+document.location.href+'</div>').openPopup();
+      .bindPopup("Shared Location").openPopup();
     app.map.setView([hash[2], hash[3]], 3);
   }
 }
