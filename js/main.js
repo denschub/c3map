@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     maxZoom: 5,
     tileSize: 256,
     continuousWorld: true,
-    attribution: '<a href="https://github.com/denschub/c3map/blob/master/LICENSE">c3map license information</a>'
+    attribution: '<a href="https://github.com/denschub/c3map/blob/master/LICENSE">c3map license information</a> | text 4671 for support'
   }).addTo(app.map);
 
   addHashLocationMarker();
